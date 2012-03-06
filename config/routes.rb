@@ -1,4 +1,6 @@
 Digger::Application.routes.draw do
+  resources :users
+
   resources :languages
 
   # The priority is based upon order of creation:
