@@ -1,19 +1,59 @@
-<%= simple_form_for @user, :html => { :class => 'form-horizontal' } do |f| %>
-  <% if f.error_notification %>
-    <div class="alert alert-error fade in">
-      <a class="close" data-dismiss="alert" href="#">&times;</a>
-      <%= f.error_notification %>
+<%= form_for @user, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> User</legend>
+
+    <div class="control-group">
+      <%= f.label :GroupID, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.number_field :GroupID, :class => 'number_field' %>
+      </div>
     </div>
-  <% end %>
 
-  <%= f.input :login %>
-  <%= f.input :name %>
-  <%= f.input :active, :as => :boolean %>
-  <%= f.association :nativelanguage %>
+    <div class="control-group">
+      <%= f.label :Login, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :Login, :class => 'text_field' %>
+      </div>
+    </div>
 
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to 'Cancel', users_path, :class => 'btn' %>
-  </div>
+    <div class="control-group">
+      <%= f.label :Name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :Name, :class => 'text_field' %>
+      </div>
+    </div>
 
+    <div class="control-group">
+      <%= f.label :Password, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :Password, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :EMail, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :EMail, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :Active, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.check_box :Active, :class => 'check_box' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :NativeLanguageID, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.number_field :NativeLanguageID, :class => 'number_field' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', users_path, :class => 'btn' %>
+    </div>
+  </fieldset>
 <% end %>

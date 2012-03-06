@@ -1,8 +1,9 @@
 Digger::Application.routes.draw do
-  resources :production_statuses
-
+<<<<<<< HEAD
+=======
   resources :clients
 
+>>>>>>> parent of 750c8c1... Wrong label
   resources :users
 
   resources :languages
