@@ -1,19 +1,15 @@
-<%= simple_form_for @user, :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for @client, :html => { :class => 'form-horizontal' } do |f| %>
   <% if f.error_notification %>
     <div class="alert alert-error fade in">
       <a class="close" data-dismiss="alert" href="#">&times;</a>
       <%= f.error_notification %>
     </div>
   <% end %>
-
-  <%= f.input :login %>
+  
   <%= f.input :name %>
-  <%= f.input :active, :as => :boolean %>
-  <%= f.association :nativelanguage %>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to 'Cancel', users_path, :class => 'btn' %>
+    <%= link_to 'Cancel', clients_path, :class => 'btn' %>
   </div>
-
 <% end %>
