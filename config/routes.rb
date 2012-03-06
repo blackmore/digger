@@ -1,4 +1,6 @@
 Digger::Application.routes.draw do
+  resources :production_statuses
+
   resources :clients
 
   resources :users
