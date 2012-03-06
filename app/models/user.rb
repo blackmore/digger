@@ -10,4 +10,6 @@ class User < ActiveRecord::Base
   alias_attribute :lastsaved_id, 'LastSavedID'
   alias_attribute :updated_at, 'LastChanged'
   belongs_to :nativelanguage, :class_name => "Language", :foreign_key => "NativeLanguageID", :primary_key => "LanguageID"
+  has_many :language_users, :foreign_key => "StaffID"
+  has_many :languages, :through => :language_users
 end
