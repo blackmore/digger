@@ -1,5 +1,5 @@
 class Status < ActiveRecord::Base
-  set_table_name "Status"
-  set_primary_key "StatusID"
+  self.table_name = "Status"
+  self.primary_key = "StatusID"
   alias_attribute :name, 'Name'
 end

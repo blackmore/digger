@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  set_table_name "Staff"
-  set_primary_key "StaffID"
+  self.table_name = "Staff"
+  self.primary_key = "StaffID"
   alias_attribute :group_id, 'GroupID'
   alias_attribute :login, 'Login'
   alias_attribute :name, 'Name'
