@@ -1,0 +1,17 @@
+<h1>Timetrackingtype</h1>
+
+<p>
+  <b>Typeid</b><br>
+  <%= @timetrackingtype.TypeID %>
+</p>
+
+<p>
+  <b>Name</b><br>
+  <%= @timetrackingtype.Name %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', timetrackingtypes_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_timetrackingtype_path(@timetrackingtype), :class => 'btn' %>
+  <%= link_to 'Delete', timetrackingtype_path(@timetrackingtype), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

@@ -1,0 +1,17 @@
+<h1>Productionstatus</h1>
+
+<p>
+  <b>Statusid</b><br>
+  <%= @productionstatus.StatusID %>
+</p>
+
+<p>
+  <b>Name</b><br>
+  <%= @productionstatus.Name %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', productionstatuses_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_productionstatus_path(@productionstatus), :class => 'btn' %>
+  <%= link_to 'Delete', productionstatus_path(@productionstatus), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

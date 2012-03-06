@@ -1,0 +1,24 @@
+<h1>Statuss</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @statuses.each do |status| %>
+      <tr>
+        <td><%= status.id %></td>
+        <td><%= link_to status.name, status_path(status) %></td>
+        <td>
+          <%= link_to 'Edit', edit_status_path(status), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', status_path(status), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_status_path, :class => 'btn btn-primary' %>

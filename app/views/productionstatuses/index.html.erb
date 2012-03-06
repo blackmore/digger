@@ -1,0 +1,24 @@
+<h1>Productionstatuss</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @productionstatuses.each do |productionstatus| %>
+      <tr>
+        <td><%= productionstatus.id %></td>
+        <td><%= link_to productionstatus.name, productionstatus_path(productionstatus) %></td>
+        <td>
+          <%= link_to 'Edit', edit_productionstatus_path(productionstatus), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', productionstatus_path(productionstatus), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_productionstatus_path, :class => 'btn btn-primary' %>
