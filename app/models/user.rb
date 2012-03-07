@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  establish_connection "platform_#{Rails.env}"
   self.table_name = "Staff"
   self.primary_key = "StaffID"
   alias_attribute :group_id, 'GroupID'

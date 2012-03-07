@@ -1,4 +1,5 @@
 class LanguageUser < ActiveRecord::Base
+  establish_connection "platform_#{Rails.env}"
   self.table_name = "StaffLanguage"
   self.primary_key = "StaffID"
   self.primary_key = "LangID"

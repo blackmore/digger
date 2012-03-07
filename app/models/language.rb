@@ -1,4 +1,5 @@
 class Language < ActiveRecord::Base
+  establish_connection "platform_#{Rails.env}"
   self.table_name = "Language"
   self.primary_key = "LanguageID"
   alias_attribute :name, 'Language'
