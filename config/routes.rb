@@ -1,4 +1,8 @@
 Digger::Application.routes.draw do
+  resources :tasks
+
+  resources :productions
+
   resources :timetrackingtypes
 
   resources :groups

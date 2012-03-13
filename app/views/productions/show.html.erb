@@ -1,0 +1,72 @@
+<h1>Production</h1>
+
+<p>
+  <b>Productionid</b><br>
+  <%= @production.ProductionID %>
+</p>
+
+<p>
+  <b>Productionno</b><br>
+  <%= @production.ProductionNo %>
+</p>
+
+<p>
+  <b>Customerid</b><br>
+  <%= @production.CustomerID %>
+</p>
+
+<p>
+  <b>Categoryid</b><br>
+  <%= @production.CategoryID %>
+</p>
+
+<p>
+  <b>Managerid</b><br>
+  <%= @production.ManagerID %>
+</p>
+
+<p>
+  <b>Title</b><br>
+  <%= @production.Title %>
+</p>
+
+<p>
+  <b>Notbefore</b><br>
+  <%= @production.NotBefore %>
+</p>
+
+<p>
+  <b>Deadline</b><br>
+  <%= @production.Deadline %>
+</p>
+
+<p>
+  <b>Createddate</b><br>
+  <%= @production.CreatedDate %>
+</p>
+
+<p>
+  <b>Createdbyid</b><br>
+  <%= @production.CreatedByID %>
+</p>
+
+<p>
+  <b>Statusid</b><br>
+  <%= @production.StatusID %>
+</p>
+
+<p>
+  <b>Factortype</b><br>
+  <%= @production.FactorType %>
+</p>
+
+<p>
+  <b>Lastchanged</b><br>
+  <%= @production.LastChanged %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', productions_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_production_path(@production), :class => 'btn' %>
+  <%= link_to 'Delete', production_path(@production), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

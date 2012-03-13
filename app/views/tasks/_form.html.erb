@@ -1,0 +1,52 @@
+<%= form_for @task, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> Task</legend>
+
+    <div class="control-group">
+      <%= f.label :StartDate, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.datetime_select :StartDate, :class => 'datetime_select' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :EndDate, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.datetime_select :EndDate, :class => 'datetime_select' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :DateFix, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.check_box :DateFix, :class => 'check_box' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :Notes, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :Notes, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :StatusID, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.number_field :StatusID, :class => 'number_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :Dongle, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.number_field :Dongle, :class => 'number_field' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', tasks_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>

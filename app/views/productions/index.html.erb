@@ -1,0 +1,27 @@
+<h1>Productions</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Client</th>
+      <th>Deadline</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @productions.each do |production| %>
+      <tr>
+        <td><%= production.id %></td>
+        <td><%= link_to production.title, production_path(production) %></td>
+        <td><%= production.client.try(:name) %></td>
+        <td><%= deadline(production.deadline) %></td>
+        <td><%= status(production.status_id) %></td>
+        <td><a href="/productions/10718/edit" class="btn btn-mini">Edit</a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @productions %>
+
+<%= link_to 'New', new_production_path, :class => 'btn btn-primary' %>

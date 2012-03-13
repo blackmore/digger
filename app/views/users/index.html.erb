@@ -4,6 +4,7 @@
     <tr>
       <th>ID</th>
       <th>Name</th>
+      <th>Team</th>
       <th>Active</th>
       <th>Native Language</th>
       <th>Actions</th>
@@ -14,6 +15,7 @@
       <tr>
         <td><%= user.id %></td>
         <td><%= link_to user.name, user_path(user) %></td>
+        <td><%= user.teamlanguage.try(:name) %></td>
         <td><%= user.nativelanguage.try(:name) %></td>
         <td><%= user.active %></td>
         <td>
