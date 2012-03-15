@@ -15,4 +15,5 @@ class User < ActiveRecord::Base
   has_many :language_users, :foreign_key => "StaffID"
   has_many :languages, :through => :language_users
   has_one :useraddon
+  has_many :tasks
 end

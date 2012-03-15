@@ -8,30 +8,31 @@
 #
 # And be sure to use new-style password hashing:
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
-production_defaults: &production_defaults
-  adapter: mysql
-  reconnect: false
-  pool: 5
-  username: root
-  password:
-  socket: /tmp/mysql.sock
-
-mysql_defaults: &mysql_defaults
-  adapter: mysql
-  reconnect: false
-  database: digger_development
-  pool: 5
-  username: root
-  password:
-  socket: /tmp/mysql.sock
+# production_defaults: &production_defaults
+#   adapter: mysql2
+#   reconnect: false
+#   pool: 5
+#   username: root
+#   password:
+#   socket: /tmp/mysql.sock
+# 
+# mysql_defaults: &mysql_defaults
+#   adapter: mysql2
+#   reconnect: false
+#   database: digger_development
+#   pool: 5
+#   username: root
+#   password:
+#   socket: /tmp/mysql.sock
 
 development:
+  adapter: mysql
+  reconnect: false
   database: digger_development
-  <<: *mysql_defaults
-  repositories:
-    production:
-      database: platform_development
-      <<: *production_defaults
+  pool: 5
+  username: root
+  password:
+  socket: /tmp/mysql.sock
 
 platform_development:
   adapter: mysql

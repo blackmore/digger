@@ -1,4 +1,6 @@
 Digger::Application.routes.draw do
+  resources :functions
+
   resources :tasks
 
   resources :productions

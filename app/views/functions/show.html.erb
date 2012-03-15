@@ -1,0 +1,72 @@
+<h1>Function</h1>
+
+<p>
+  <b>Functionid</b><br>
+  <%= @function.FunctionID %>
+</p>
+
+<p>
+  <b>Name</b><br>
+  <%= @function.Name %>
+</p>
+
+<p>
+  <b>Shortname</b><br>
+  <%= @function.ShortName %>
+</p>
+
+<p>
+  <b>Function</b><br>
+  <%= @function.Function %>
+</p>
+
+<p>
+  <b>Richtwert a1</b><br>
+  <%= @function.Richtwert_A1 %>
+</p>
+
+<p>
+  <b>Richtwert a2</b><br>
+  <%= @function.Richtwert_A2 %>
+</p>
+
+<p>
+  <b>Richtwert a3</b><br>
+  <%= @function.Richtwert_A3 %>
+</p>
+
+<p>
+  <b>Richtwert b1</b><br>
+  <%= @function.Richtwert_B1 %>
+</p>
+
+<p>
+  <b>Richtwert b2</b><br>
+  <%= @function.Richtwert_B2 %>
+</p>
+
+<p>
+  <b>Richtwert b3</b><br>
+  <%= @function.Richtwert_B3 %>
+</p>
+
+<p>
+  <b>Richtwert c1</b><br>
+  <%= @function.Richtwert_C1 %>
+</p>
+
+<p>
+  <b>Richtwert c2</b><br>
+  <%= @function.Richtwert_C2 %>
+</p>
+
+<p>
+  <b>Richtwert c3</b><br>
+  <%= @function.Richtwert_C3 %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', functions_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_function_path(@function), :class => 'btn' %>
+  <%= link_to 'Delete', function_path(@function), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

@@ -9,4 +9,5 @@ class Production < ActiveRecord::Base
   alias_attribute :client_id, 'CustomerID'
   belongs_to :client
   belongs_to :client, :class_name => "Client", :foreign_key => "CustomerID", :primary_key => "CustomerID"
+  has_many :tasks, :class_name => "Task", :foreign_key => "ProductionID"
 end
