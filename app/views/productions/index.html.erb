@@ -13,7 +13,7 @@
     <% @productions.each do |production| %>
       <tr>
         <td><%= production.id %></td>
-        <td><%= link_to production.title, production_path(production) %></td>
+        <td><%= link_to active_production.title, production_path(active_production) %></td>
         <td><%= production.client.try(:name) %></td>
         <td><%= deadline(production.deadline) %></td>
         <td><%= status(production.status_id) %></td>

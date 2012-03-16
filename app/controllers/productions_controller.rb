@@ -2,7 +2,6 @@ class ProductionsController < ApplicationController
   # GET /productions
   # GET /productions.json
   def index
-    #@posts = Post.paginate :page => params[:page], :order => 'updated_at DESC'
     @productions = Production.paginate :page => params[:page], :order => 'CreatedDate DESC'
 
     respond_to do |format|
@@ -79,6 +78,17 @@ class ProductionsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to productions_url }
       format.json { head :no_content }
+    end
+  end
+
+  # CUSTOME PAGES  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+  def active_productions
+    @active_productions = Production.active.paginate :page => params[:page], :order => 'CreatedDate DESC'
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @active_productions }
     end
   end
 end
