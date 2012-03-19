@@ -26,7 +26,7 @@
 #   socket: /tmp/mysql.sock
 
 development:
-  adapter: mysql
+  adapter: mysql2
   reconnect: false
   database: digger_development
   pool: 5
@@ -35,7 +35,7 @@ development:
   socket: /tmp/mysql.sock
 
 platform_development:
-  adapter: mysql
+  adapter: mysql2
   reconnect: false
   database: platform_development
   pool: 5
@@ -44,7 +44,7 @@ platform_development:
   socket: /tmp/mysql.sock
 
 time_log_development:
-  adapter: mysql
+  adapter: mysql2
   reconnect: false
   database: timesheets_development
   pool: 5
@@ -58,7 +58,7 @@ time_log_development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 platform_test:
-  adapter: mysql
+  adapter: mysql2
   encoding: utf8
   reconnect: false
   database: platform_test
@@ -68,7 +68,7 @@ platform_test:
   socket: /tmp/mysql.sock
 
 test:
-  adapter: mysql
+  adapter: mysql2
   encoding: utf8
   reconnect: false
   database: digger_test
@@ -78,7 +78,7 @@ test:
   socket: /tmp/mysql.sock
 
 platform_production:
-  adapter: mysql
+  adapter: mysql2
   encoding: utf8
   reconnect: false
   database: platform_production
@@ -88,7 +88,7 @@ platform_production:
   socket: /tmp/mysql.sock
 
 production:
-  adapter: mysql
+  adapter: mysql2
   encoding: utf8
   reconnect: false
   database: digger_production

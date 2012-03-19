@@ -1,0 +1,172 @@
+<h1>Tracking</h1>
+
+<p>
+  <b>Trackingid</b><br>
+  <%= @tracking.TrackingID %>
+</p>
+
+<p>
+  <b>Productionid</b><br>
+  <%= @tracking.ProductionID %>
+</p>
+
+<p>
+  <b>Duration</b><br>
+  <%= @tracking.Duration %>
+</p>
+
+<p>
+  <b>Languagefromid</b><br>
+  <%= @tracking.LanguageFromID %>
+</p>
+
+<p>
+  <b>Languagetoid</b><br>
+  <%= @tracking.LanguageToID %>
+</p>
+
+<p>
+  <b>Mastertype</b><br>
+  <%= @tracking.MasterType %>
+</p>
+
+<p>
+  <b>Rollen</b><br>
+  <%= @tracking.Rollen %>
+</p>
+
+<p>
+  <b>Vitc</b><br>
+  <%= @tracking.VITC %>
+</p>
+
+<p>
+  <b>Mastertimecode</b><br>
+  <%= @tracking.MasterTimeCode %>
+</p>
+
+<p>
+  <b>Importeztitles</b><br>
+  <%= @tracking.ImportEZTitles %>
+</p>
+
+<p>
+  <b>Importfab</b><br>
+  <%= @tracking.ImportFAB %>
+</p>
+
+<p>
+  <b>Importcopy</b><br>
+  <%= @tracking.ImportCopy %>
+</p>
+
+<p>
+  <b>Importvhs</b><br>
+  <%= @tracking.ImportVHS %>
+</p>
+
+<p>
+  <b>Authoringhouse</b><br>
+  <%= @tracking.AuthoringHouse %>
+</p>
+
+<p>
+  <b>Studio</b><br>
+  <%= @tracking.Studio %>
+</p>
+
+<p>
+  <b>Broadcast</b><br>
+  <%= @tracking.Broadcast %>
+</p>
+
+<p>
+  <b>Filename</b><br>
+  <%= @tracking.Filename %>
+</p>
+
+<p>
+  <b>Projecttype</b><br>
+  <%= @tracking.ProjectType %>
+</p>
+
+<p>
+  <b>Path</b><br>
+  <%= @tracking.Path %>
+</p>
+
+<p>
+  <b>Origpath</b><br>
+  <%= @tracking.OrigPath %>
+</p>
+
+<p>
+  <b>Mempath</b><br>
+  <%= @tracking.MemPath %>
+</p>
+
+<p>
+  <b>Newmempath</b><br>
+  <%= @tracking.NewMemPath %>
+</p>
+
+<p>
+  <b>Matmisc</b><br>
+  <%= @tracking.MatMisc %>
+</p>
+
+<p>
+  <b>Matfeedback</b><br>
+  <%= @tracking.MatFeedback %>
+</p>
+
+<p>
+  <b>Matwishes</b><br>
+  <%= @tracking.MatWishes %>
+</p>
+
+<p>
+  <b>Matdialoglist</b><br>
+  <%= @tracking.MatDialogList %>
+</p>
+
+<p>
+  <b>Mattranslation</b><br>
+  <%= @tracking.MatTranslation %>
+</p>
+
+<p>
+  <b>Matglossary</b><br>
+  <%= @tracking.MatGlossary %>
+</p>
+
+<p>
+  <b>Matguidelines</b><br>
+  <%= @tracking.MatGuidelines %>
+</p>
+
+<p>
+  <b>Materrata</b><br>
+  <%= @tracking.MatErrata %>
+</p>
+
+<p>
+  <b>Specialnotes</b><br>
+  <%= @tracking.SpecialNotes %>
+</p>
+
+<p>
+  <b>Internalnotes</b><br>
+  <%= @tracking.InternalNotes %>
+</p>
+
+<p>
+  <b>Techcontact</b><br>
+  <%= @tracking.TechContact %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', trackings_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_tracking_path(@tracking), :class => 'btn' %>
+  <%= link_to 'Delete', tracking_path(@tracking), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

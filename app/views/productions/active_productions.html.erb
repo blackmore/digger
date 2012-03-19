@@ -4,6 +4,7 @@
     <tr>
       <th>Deadline</th>
       <th>Title</th>
+      <th>Source</th>
       <th>Client</th>
       <th>Cost</th>
       <th>Workflow</th>
@@ -14,6 +15,7 @@
       <tr>
         <td><%= deadline(active_production.deadline) %></td>
         <td><%= link_to active_production.title, "http://10.1.1.246/production/production.php?action=load&ProductionID=#{active_production.production_id}" %></td>
+        <td><%= active_production.tracking.source.try(:name) %></td>
         <td><%= active_production.client.try(:name) %></td>
         <td><%= number_to_currency(calculate_cost(active_production.time_logs), :unit => "&euro;") %></td>
         <td><%= workflow(active_production.tasks) %></td>
