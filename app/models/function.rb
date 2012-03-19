@@ -3,4 +3,5 @@ class Function < ActiveRecord::Base
   self.table_name = "Function"
   self.primary_key = "FunctionID"
   alias_attribute :name, 'Name'
+  alias_attribute :short_name, 'ShortName'
 end

@@ -23,7 +23,6 @@ module ProductionsHelper
     end
   end
 
-
   def workflow(tasks)
     task_string = ""
     if tasks
@@ -32,11 +31,11 @@ module ProductionsHelper
         if task.user.try(:name)
           task_string << case task.status_id
           when 1 
-            "<a href='#' rel='tooltip' title='#{task.user.try(:name)}'><span class='label'>#{task.function_id}</span></a>"
+            "<a href='#' rel='tooltip' title='#{task.user.try(:name)}'><span class='label'>#{task.functions.short_name}</span></a> "
           when 2
-            "<a href='#' rel='tooltip' title='#{task.user.try(:name)}'><span class='label label-warning '>#{task.function_id}</span></a>"
+            "<a href='#' rel='tooltip' title='#{task.user.try(:name)}'><span class='label label-warning '>#{task.functions.short_name}</span></a> "
           when 3
-            "<a href='#' rel='tooltip' title='#{task.user.try(:name)}'><span class='label label-success '>#{task.function_id}</span></a>"
+            "<a href='#' rel='tooltip' title='#{task.user.try(:name)}'><span class='label label-success '>#{task.functions.short_name}</span></a> "
           else
             ""
           end
@@ -54,7 +53,13 @@ module ProductionsHelper
 end
 
 def calculate_effort(time_logs)
-  if time_logs
+  unless time_logs.blank?
     time_logs.inject(0){|sum,item| sum + item.time_spent}
+  end
+end
+
+def calculate_cost(time_logs)
+  unless time_logs.blank?
+    time_logs.inject(0){|sum,item| sum + item.cost}
   end
 end

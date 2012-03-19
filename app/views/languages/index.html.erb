@@ -4,6 +4,7 @@
     <tr>
       <th>ID</th>
       <th>Name</th>
+      <th>Short Name</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -12,6 +13,7 @@
       <tr>
         <td><%= language.id %></td>
         <td><%= link_to language.name, language_path(language) %></td>
+        <td><%= language.short_name %></td>
         <td>
           <%= link_to 'Edit', edit_language_path(language), :class => 'btn btn-mini' %>
           <%= link_to 'Destroy', language_path(language), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>

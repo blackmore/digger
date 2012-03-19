@@ -4,6 +4,7 @@
     <tr>
       <th>ID</th>
       <th>Name</th>
+      <th>Short Name</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -12,6 +13,7 @@
       <tr>
         <td><%= function.id %></td>
         <td><%= link_to function.name, function_path(function) %></td>
+        <td><%= function.short_name %></td>
         <td>
           <%= link_to 'Edit', edit_function_path(function), :class => 'btn btn-mini' %>
           <%= link_to 'Destroy', function_path(function), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
