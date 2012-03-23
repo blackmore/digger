@@ -5,6 +5,7 @@
       <th>Deadline</th>
       <th>Title</th>
       <th>Source</th>
+      <th>Target</th>
       <th>Client</th>
       <th>Cost</th>
       <th>Workflow</th>
@@ -14,11 +15,12 @@
     <% @active_productions.each do |active_production| %>
       <tr>
         <td><%= deadline(active_production.deadline) %></td>
-        <td><%= link_to active_production.title, "http://10.1.1.246/production/production.php?action=load&ProductionID=#{active_production.production_id}" %></td>
-        <td><%= active_production.tracking.source.try(:name) %></td>
+        <td><%= link_to active_production.title, "http://10.1.1.246/production/production.php?action=load&ProductionID=#{active_production.production_id}" %><%= f_run_length(active_production.tracking.run_length, active_production.category_id) %></td>
+        <td class="subText"><%= active_production.tracking.source.try(:short_name) %></td>
+        <td><%= active_production.tracking.target.try(:short_name) %></td>
         <td><%= active_production.client.try(:name) %></td>
         <td><%= number_to_currency(calculate_cost(active_production.time_logs), :unit => "&euro;") %></td>
-        <td><%= workflow(active_production.tasks) %></td>
+        <td><%= workflow(active_production.try(:tasks)) %></td>
       </tr>
     <% end %>
   </tbody>

@@ -35,7 +35,7 @@ development:
   socket: /tmp/mysql.sock
 
 platform_development:
-  adapter: mysql2
+  adapter: mysql
   reconnect: false
   database: platform_development
   pool: 5
@@ -78,7 +78,7 @@ test:
   socket: /tmp/mysql.sock
 
 platform_production:
-  adapter: mysql2
+  adapter: mysql
   encoding: utf8
   reconnect: false
   database: platform_production

@@ -80,4 +80,17 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  def active_users
+    @active_users = User.active.paginate :page => params[:page], :order => 'Name DESC'
+
+    respond_to do |format|
+      format.html # active_users.html.erb
+      format.json { render json: @active_productions }
+    end
+    
+  end
 end

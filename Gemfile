@@ -6,11 +6,13 @@ gem 'rails', '3.2.2'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
+gem 'mysql'
 # gem 'dm-rails'
 # gem 'dm-mysql-adapter'
 gem 'simple_form'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'business_time'
 
 
 # Gems used only for assets and not required

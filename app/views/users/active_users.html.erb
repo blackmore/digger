@@ -1,0 +1,17 @@
+<h1>Active Productions</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Deadline</th>
+      <th>Tasks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @active_users.each do |active_user| %>
+      <tr>
+        <td><%= active_user.name %></td>
+        <td><%= active_user.tasks.next_two_weeks.length %></td>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @active_users %>

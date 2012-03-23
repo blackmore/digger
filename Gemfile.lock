@@ -32,6 +32,8 @@ GEM
     bootstrap-will_paginate (0.0.6)
       will_paginate
     builder (3.0.0)
+    business_time (0.4.0)
+      activesupport (>= 2.0.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -64,6 +66,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.17.2)
     multi_json (1.1.0)
+    mysql (2.8.1)
     mysql2 (0.3.11)
     polyglot (0.3.3)
     rack (1.4.1)
@@ -125,8 +128,10 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-will_paginate
+  business_time
   coffee-rails (~> 3.2.1)
   jquery-rails
+  mysql
   mysql2
   rails (= 3.2.2)
   sass-rails (~> 3.2.3)

@@ -11,4 +11,8 @@ class Task < ActiveRecord::Base
   belongs_to :user, :class_name => "User", :foreign_key => "StaffID", :primary_key => "StaffID"
   belongs_to :production, :class_name => "Production", :foreign_key => "ProductionID", :primary_key => "ProductionID"
   belongs_to :functions, :class_name => "Function", :foreign_key => "FunctionID", :primary_key => "FunctionID"
+
+  scope :next_two_weeks, lambda {
+    where("StartDate >= ?", Date.today)
+  }
 end

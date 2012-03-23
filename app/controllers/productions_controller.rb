@@ -84,7 +84,7 @@ class ProductionsController < ApplicationController
   # CUSTOME PAGES  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
   def active_productions
-    @active_productions = Production.active.paginate :page => params[:page], :order => 'CreatedDate DESC'
+    @active_productions = Production.active.paginate :page => params[:page], :order => 'Deadline DESC'
 
     respond_to do |format|
       format.html # index.html.erb

@@ -24,6 +24,7 @@ Digger::Application.routes.draw do
   resources :languages
 
   get "active_productions" => "productions#active_productions", :as => "active_productions"
+  get "active_users" => "users#active_users", :as => "active_users"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

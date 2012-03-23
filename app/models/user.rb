@@ -14,6 +14,9 @@ class User < ActiveRecord::Base
   belongs_to :teamlanguage, :class_name => "Language", :foreign_key => :team, :primary_key => "LanguageID"
   has_many :language_users, :foreign_key => "StaffID"
   has_many :languages, :through => :language_users
-  has_one :useraddon
-  has_many :tasks
+  # has_one :useraddon
+  has_many :tasks, :class_name => "Task", :foreign_key => "StaffID"
+
+  scope :active, where("Staff.Active = ?", 1)#.includes("tasks")
+    
 end

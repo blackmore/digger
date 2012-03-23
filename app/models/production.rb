@@ -6,6 +6,7 @@ class Production < ActiveRecord::Base
   alias_attribute :title, 'Title'
   alias_attribute :status_id, 'StatusID'
   alias_attribute :deadline, 'Deadline'
+  alias_attribute :category_id, 'CategoryID'
   alias_attribute :updated_at, 'CreatedDate'
   alias_attribute :client_id, 'CustomerID'
   alias_attribute :production_number, 'ProductionNo'
@@ -16,7 +17,9 @@ class Production < ActiveRecord::Base
   has_many :time_logs, :class_name => "TimeLog", :foreign_key => "project_number", :primary_key => "ProductionNo"
   has_many :users, :through => :tasks
   has_many :source, :through => :tracking
+  has_many :target, :through => :tracking
   has_many :functions, :through => :tasks
-  #  scope :recent, order("posts.published_at DESC")
-  scope :active, where("Production.StatusID = ?", 1).includes(:tasks, :client, :time_logs, :users, :source, :functions)
+  # scope :recent, order("posts.published_at DESC"
+
+  scope :active, where("Production.StatusID = ?", 1)#.includes(:tasks, :client, :time_logs, :source, :functions, :target )
 end

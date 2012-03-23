@@ -25,17 +25,18 @@ module ProductionsHelper
 
   def workflow(tasks)
     task_string = ""
+
     if tasks
       tasks.delete_if {|task| task.function_id >= 18 } 
       tasks.each do |task|
         if task.user.try(:name)
           task_string << case task.status_id
           when 1 
-            "<a href='#' rel='tooltip' title='#{task.user.try(:name)}'><span class='label'>#{task.functions.short_name}</span></a> "
+            "<a href='#' rel='tooltip' title='#{task.user.try(:name)}'><span class='label'>#{task.functions.try(:short_name)}</span></a> "
           when 2
-            "<a href='#' rel='tooltip' title='#{task.user.try(:name)}'><span class='label label-warning '>#{task.functions.short_name}</span></a> "
+            "<a href='#' rel='tooltip' title='#{task.user.try(:name)}'><span class='label label-warning '>#{task.functions.try(:short_name)}</span></a> "
           when 3
-            "<a href='#' rel='tooltip' title='#{task.user.try(:name)}'><span class='label label-success '>#{task.functions.short_name}</span></a> "
+            "<a href='#' rel='tooltip' title='#{task.user.try(:name)}'><span class='label label-success '>#{task.functions.try(:short_name)}</span></a> "
           else
             ""
           end
@@ -61,5 +62,11 @@ end
 def calculate_cost(time_logs)
   unless time_logs.blank?
     time_logs.inject(0){|sum,item| sum + item.cost}
+  end
+end
+
+def f_run_length(run_length, category)
+  if run_length
+    "<span class='subText'> (#{run_length}#{category == 4 ? " lines" : "'"})</span>".html_safe
   end
 end
