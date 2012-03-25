@@ -12,7 +12,7 @@ gem 'mysql'
 gem 'simple_form'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
-gem 'business_time'
+gem 'business_time', :git => 'git://github.com/bokmann/business_time.git'
 
 
 # Gems used only for assets and not required

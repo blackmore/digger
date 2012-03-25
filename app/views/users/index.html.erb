@@ -2,22 +2,22 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>ID</th>
       <th>Name</th>
       <th>Team</th>
-      <th>Active</th>
       <th>Native Language</th>
+      <th>Active</th>
+      <th>EFT Percentage</th>
       <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.id %></td>
         <td><%= link_to user.name, user_path(user) %></td>
         <td><%= user.teamlanguage.try(:name) %></td>
         <td><%= user.nativelanguage.try(:name) %></td>
         <td><%= user.active %></td>
+        <td><%= user.eft_percent %></td>
         <td>
           <%= link_to 'Edit', edit_user_path(user), :class => 'btn btn-mini' %>
           <%= link_to 'Destroy', user_path(user), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>

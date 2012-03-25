@@ -8,10 +8,10 @@
 
   <%= f.input :login %>
   <%= f.input :name %>
-  <%= f.input :real_name %>
   <%= f.association :teamlanguage %>
   <%= f.input :active, :as => :boolean %>
   <%= f.association :nativelanguage %>
+  <%= f.input :eft_percent %>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
