@@ -84,7 +84,7 @@ class UsersController < ApplicationController
   # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-  def active_users
+  def next_14_days
     @active_users = User.active.paginate :page => params[:page], :order => 'Name DESC'
 
     respond_to do |format|

@@ -21,7 +21,7 @@ module UsersHelper
     duration
   end
 
-  def uterlisation_percentage(allocated, user, scope)
+  def utilisation_percentage(allocated, user, scope)
     hrs = available_hrs(user, scope)
     percentage = as_percentage(hrs, allocated)
     case percentage
