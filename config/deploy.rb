@@ -6,6 +6,7 @@ require "rvm/capistrano"
 
 set :rvm_ruby_string, '1.9.2'
 set :rvm_type, :user  # Don't use system-wide RVM
+default_run_options[:pty] = true
 
 set :user, 'administrator'
 set :domain, '10.1.1.201'
