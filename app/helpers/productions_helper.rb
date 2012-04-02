@@ -55,13 +55,13 @@ end
 
 def calculate_effort(time_logs)
   unless time_logs.blank?
-    time_logs.inject(0){|sum,item| sum + item.time_spent}
+    time_logs.inject(0){|sum,item| sum + (item.time_spent ||= 0)}
   end
 end
 
 def calculate_cost(time_logs)
   unless time_logs.blank?
-    time_logs.inject(0){|sum,item| sum + item.cost}
+    time_logs.inject(0){|sum,item| sum + (item.cost ||= 0)}
   end
 end
 
