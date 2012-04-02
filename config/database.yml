@@ -101,9 +101,8 @@ time_log_production:
 production:
   adapter: mysql2
   encoding: utf8
-  reconnect: false
+  reconnect: true
   database: digger_production
-  pool: 5
   username: root
-  password:
-  socket: /tmp/mysql.sock
+  password: X43a7:4
+  host: localhost
