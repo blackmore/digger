@@ -35,13 +35,21 @@ development:
   socket: /tmp/mysql.sock
 
 platform_development:
+  # adapter: mysql
+  # reconnect: false
+  # database: platform_development
+  # pool: 5
+  # username: root
+  # password:
+  # socket: /tmp/mysql.sock
   adapter: mysql
-  reconnect: false
-  database: platform_development
-  pool: 5
-  username: root
-  password:
-  socket: /tmp/mysql.sock
+  encoding: utf8
+  database: titelbild
+  #pool: 5
+  timeout: 5000
+  username: titelbild
+  password: trackingpw
+  host:     10.1.1.246
 
 time_log_development:
   adapter: mysql2

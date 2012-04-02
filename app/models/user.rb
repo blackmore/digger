@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
   has_many :languages, :through => :language_users
   # has_one :useraddon
   has_many :tasks, :class_name => "Task", :foreign_key => "StaffID"
+  scope :belongs_to_team, where("Staff.team_id > ?", 0)
 
-  scope :active, where("Staff.Active IS NOT NULL AND Staff.team_id IS NOT NULL")
+  scope :active, belongs_to_team.where("Staff.Active" => true)#.where("Staff.team_id" == 0)
+  #scope :active, where("Staff.Active IS TRUE AND Staff.team_id IS NOT NULL")
 end
