@@ -43,12 +43,13 @@ module UsersHelper
   end
 
   def as_percentage(hrs, allocated)
-    presentage = allocated.to_f.send(:/, hrs).send(:*,100)
-    if presentage > 0
-      presentage.floor
-    else
-      nil
-    end
+    #presentage = 
+    allocated.to_f.send(:/, hrs).send(:*,100)
+    #if presentage > 0
+    #  presentage.floor
+    #else
+    #  nil
+    #end
   end
 
 

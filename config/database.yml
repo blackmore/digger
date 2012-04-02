@@ -82,6 +82,7 @@ test:
 
 platform_production:
   adapter: mysql
+  encoding: utf8
   database: titelbild
   #pool: 5
   timeout: 5000
