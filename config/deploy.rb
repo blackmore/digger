@@ -52,7 +52,7 @@ namespace :deploy do
   end
 end
 
-after 'deploy:update_code'#, 'deploy:compile_assets'
+#after 'deploy:update_code', 'deploy:compile_assets'
 
 # why does this not work!!!
 # after 'deploy:update_code' do
