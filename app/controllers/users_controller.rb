@@ -91,6 +91,14 @@ class UsersController < ApplicationController
       format.html # active_users.html.erb
       format.json { render json: @active_productions }
     end
-    
+  end
+
+  def next_7_days
+    @active_users = User.active.paginate :page => params[:page], :order => 'Name DESC'
+
+    respond_to do |format|
+      format.html # active_users.html.erb
+      format.json { render json: @active_productions }
+    end
   end
 end

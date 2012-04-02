@@ -1,0 +1,24 @@
+<h1>Utilisation (7 days)</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Users</th>
+      <th>Tasks</th>
+      <th>Allocated hrs</th>
+      <th>Utilisation %</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @active_users.each do |active_user| %>
+    <% hours_allocated, number_of_tasks = get_user_tasks_infos(active_user.tasks.next_7business_days) %>
+
+      <tr>
+        <td><%= active_user.name %></td>
+        <td><%= format_number_of_tasks(number_of_tasks) %></td>
+        <td><%= hours_allocated %></td>
+        <td><%= utilisation_percentage(hours_allocated, active_user, 7) %></td>
+        <td><a href=""><i class="icon-info-sign"></i></a></td>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @active_users %>

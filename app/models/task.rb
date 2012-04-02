@@ -18,4 +18,9 @@ class Task < ActiveRecord::Base
     end_date = 14.business_days.from_now
     where('StartDate' => ((Date.today)..(end_date.to_date)))
   }
+
+  scope :next_7business_days, lambda {
+    end_date = 7.business_days.from_now
+    where('StartDate' => ((Date.today)..(end_date.to_date)))
+  }
 end

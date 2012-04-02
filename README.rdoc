@@ -1,2 +1,6 @@
 platform_development mods
 mysql> ALTER TABLE Language ADD short_name VARCHAR(30);
+
+mysql> ALTER TABLE Staff ADD team_id INTEGER;
+mysql> ALTER TABLE Staff ADD short_name VARCHAR(30);
+

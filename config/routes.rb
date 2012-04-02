@@ -26,6 +26,7 @@ Digger::Application.routes.draw do
   get "active_productions" => "productions#active_productions", :as => "active_productions"
   get "active_users" => "users#active_users", :as => "active_users"
   get "next_14_days" => "users#next_14_days", :as => "next_14_days"
+  get "next_7_days" => "users#next_7_days", :as => "next_7_days"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
