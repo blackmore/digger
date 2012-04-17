@@ -25,26 +25,29 @@ module UsersHelper
     hrs = available_hrs(user, scope)
     percentage = as_percentage(hrs, allocated)
     case percentage
-    when 1..69
+    when 0..69
       "<span class='label'>#{percentage}%</span>".html_safe
-    when 70..82
+    when 69..82
       "<span class='label label-warning'>#{percentage}%</span>".html_safe
-    when 83..99
+    when 82..100
       "<span class='label label-success'>#{percentage}%</span>".html_safe
     when 100..20000
       "<span class='label label-important'>#{percentage}%</span>".html_safe
     else
-      ""
+      "#{percentage}"
     end
   end
 
   def available_hrs(user, scope)
-    (scope * (user.eft_percent * 8)).to_i
+    eft = user.eft_percent ||= 1.0
+    (scope * (eft * 8)).to_i
   end
 
   def as_percentage(hrs, allocated)
-    presentage = allocated.to_f.send(:/, hrs).send(:*,100)
-    #presentage.floor if presentage > 0.0
+    unless allocated.nil?
+        presentage = allocated.to_f.send(:/, hrs).send(:*,100).round(0)
+    end
+
   end
 
 
