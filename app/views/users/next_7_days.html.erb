@@ -1,11 +1,11 @@
-<h1>Utilisation (7 days)</h1>
+<h1>Capasity (7 days)</h1>
 <table class="table table-striped">
   <thead>
     <tr>
       <th>Users</th>
       <th>Tasks</th>
       <th>Allocated hrs</th>
-      <th>Utilisation %</th>
+      <th>Capasity %</th>
     </tr>
   </thead>
   <tbody>
@@ -16,7 +16,7 @@
         <td><%= active_user.name %></td>
         <td><%= format_number_of_tasks(number_of_tasks) %></td>
         <td><%= hours_allocated %></td>
-        <td><%= utilisation_percentage(hours_allocated, active_user, 7) %></td>
+        <td><%= utilisation_percentage(hours_allocated, active_user, 7) %></td> 
     <% end %>
   </tbody>
 </table>
